@@ -1,4 +1,4 @@
-# **Towers_Of_Hanoi**
+# **Towers Of Hanoi**
 
 ## Documentation by Anna Stoyanova
 
