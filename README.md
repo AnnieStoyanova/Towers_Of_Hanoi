@@ -17,10 +17,11 @@ The mathematical game can be solved recursively or iteratively.
 The three pegs are named as following left, middle and right.
 Iterative solution can be implemented first by checking if number of disks is even or odd. If it is even, then we have to switch the values of right and middle peg. There are many possible solutions. Here with the help of functions and stacks the puzzle is solved. 
 The recursive algorithm for solving the problem is based on the principle of moving many disks by reducing the count. A large number of disks can be moved correctly by moving one of them and then bringing the problem back to the case, where the other disks are being moved by the rules, described before. For example if we already have the solution for moving three disks, and the given input is the number four, we will move one disk and the task is reduced to the previous one. 
-#DESCRIPTION OF THE SOLUTION APPROACH USED
+
+### DESCRIPTION OF THE SOLUTION APPROACH USED
 The problem is solved iteratively and recursively.
 
-* Iterative solution
+** Iterative solution
 
 The iterative solution is achieved with the help of four functions and three stacks, representing the three pegs, which are named left, middle and right. First method implements moving a disk between two pegs. It has two parameters. Both of them are stacks of integers, called by a reference (in cpp), for changes to be made directly on the stacks, not on their copies. There are four cases: first or second peg to be empty (without any disks on them) or the disk on the top of the first or the second to be larger than the top of the other respectively. Following the rules the disk is moved according to the case. This function is of type char, because except to move disk legally also it does one more important thing. It returns a character that gives information if we are in the case where a disk is moved from the first peg or from the second one (depending which peg holds the larger disk). This matters when the result (performed step) is being printed. That function returns the character ‘n’, assumed as normal – disk is moved from the first to the second peg. And the character ‘r’  –  assumed as reversed – disk is moved from the second to the first peg. 
 Another function is implemented that is responsible for printing the step that has to be performed. It simply takes three parameters. First is an integer, representing which disk is moved, second and third are characters – representing from which peg to which peg the movement has been made. 
