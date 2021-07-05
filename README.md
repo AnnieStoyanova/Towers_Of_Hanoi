@@ -1,5 +1,7 @@
 # **Towers_Of_Hanoi**
 
+![alt text](TOH.png)
+
 ## Documentation by Anna Stoyanova
 
 # Content:
