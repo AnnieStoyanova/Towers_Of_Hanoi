@@ -1,4 +1,4 @@
-### Towers_Of_Hanoi
+# Towers_Of_Hanoi
 
 ## Documentation by Anna Stoyanova
 
@@ -8,10 +8,10 @@
 3. Description of the solution approach used
 4. Complexity of the algorithm
 
-# TOWERS OF HANOI
+### TOWERS OF HANOI
 In the Towers of Hanoi problem there are three pegs (posts) and n disks of different sizes. Each disk has a hole in the middle so that it can fit on any peg. At the beginning of the game, all n disks are all on the first peg, arranged such that the largest is on the bottom, and the smallest is on the top (so the first peg looks like a tower). The goal of the game is to end up with all disks on the third peg, in the same order, that is, smallest on top, and increasing order towards the bottom. But, there are some restrictions to how the disks are moved (which make the problem non-trivial): (1) The only allowed type of move is to grab one disk from the top of one peg and drop it on another peg. That is, you cannot grab several disks at one time. (2) A larger disk can never lie above a smaller disk, on any post. The legend says that the world will end when a group of monks, somewhere in a temple, will finish this task with 64 golden disks on three diamond pegs.
 
-# ANALYSIS AND DESCRIPTION
+### ANALYSIS AND DESCRIPTION
 
 The mathematical game can be solved recursively or iteratively. 
 The three pegs are named as following left, middle and right.
@@ -31,8 +31,10 @@ In the main function first is made a validation of the input, then a check if it
 * Recursive solution 
 
 The recursion principle is implemented by the help of a function (or method (in java)), that calls itself with a change in the number of disks. The function has four parameters: first is an integer that represents the number of disks, second, third and fourth are constant arrays of characters (Strings in java). The three pegs are named left, middle and right. The aim is to move all of the disks correctly (following the described rules) from the left peg to the right one. Three of the parameters represent the names of the three pegs. It’s being assumed that all of the disks are arranged on the left peg. 
-The bottom of the recursion is reached when number of disks is equal to one. Before reaching this step, the function is called with number of disks, decreased by one and the same parameters as above. This means that some of the disks can be moved legally to the right peg, but there are cases, where the middle peg should be used as a temporary holder. Without this middle peg the puzzle can’t be solved. This is the reason why the function is called again, this time with change in the order of its parameters. The places of destination and the temporary helping holder are exchanged. In the main function is made a validation of the input and then the function is called. 
-	COMPLEXITY OF THE ALGORITHM
+The bottom of the recursion is reached when number of disks is equal to one. Before reaching this step, the function is called with number of disks, decreased by one and the same parameters as above. This means that some of the disks can be moved legally to the right peg, but there are cases, where the middle peg should be used as a temporary holder. Without this middle peg the puzzle can’t be solved. This is the reason why the function is called again, this time with change in the order of its parameters. The places of destination and the temporary helping holder are exchanged. In the main function is made a validation of the input and then the function is called.
+
+###	COMPLEXITY OF THE ALGORITHM
+
 In both iterative and recursive solution complexity of the algorithm is calculated by the iterations that have to be made. According to the above calculation complexity is
  O=2^n-1
 If we have to compare the recursive and iterative solution by their speed in execution, the iterative solution is faster, because the set of local variables and parameters used by the function are newly created each time the function calls itself and are stored at the top of the stack. On the other hand recursion definitely reduces the size of the code. 
