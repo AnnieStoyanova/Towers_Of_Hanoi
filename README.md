@@ -1,4 +1,4 @@
-# Towers_Of_Hanoi
+# **Towers_Of_Hanoi**
 
 ## Documentation by Anna Stoyanova
 
@@ -21,7 +21,7 @@ The recursive algorithm for solving the problem is based on the principle of mov
 ### DESCRIPTION OF THE SOLUTION APPROACH USED
 The problem is solved iteratively and recursively.
 
-** Iterative solution
+* Iterative solution
 
 The iterative solution is achieved with the help of four functions and three stacks, representing the three pegs, which are named left, middle and right. First method implements moving a disk between two pegs. It has two parameters. Both of them are stacks of integers, called by a reference (in cpp), for changes to be made directly on the stacks, not on their copies. There are four cases: first or second peg to be empty (without any disks on them) or the disk on the top of the first or the second to be larger than the top of the other respectively. Following the rules the disk is moved according to the case. This function is of type char, because except to move disk legally also it does one more important thing. It returns a character that gives information if we are in the case where a disk is moved from the first peg or from the second one (depending which peg holds the larger disk). This matters when the result (performed step) is being printed. That function returns the character ‘n’, assumed as normal – disk is moved from the first to the second peg. And the character ‘r’  –  assumed as reversed – disk is moved from the second to the first peg. 
 Another function is implemented that is responsible for printing the step that has to be performed. It simply takes three parameters. First is an integer, representing which disk is moved, second and third are characters – representing from which peg to which peg the movement has been made. 
@@ -38,6 +38,7 @@ The bottom of the recursion is reached when number of disks is equal to one. Bef
 
 In both iterative and recursive solution complexity of the algorithm is calculated by the iterations that have to be made. According to the above calculation complexity is
  O=2^n-1
+ 
 If we have to compare the recursive and iterative solution by their speed in execution, the iterative solution is faster, because the set of local variables and parameters used by the function are newly created each time the function calls itself and are stored at the top of the stack. On the other hand recursion definitely reduces the size of the code. 
 In conclusion we may say that recursions are easy to write and read, but their performance, considered by time and memory utilization rate, is not good enough as compared to iteration.
 
